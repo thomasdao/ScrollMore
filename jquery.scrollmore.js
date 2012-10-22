@@ -47,7 +47,8 @@ window.ScrollMore = window.ScrollMore || {
 			if (didScroll) {
 				didScroll = false;
 				if ($this.isNearbottom()) {
-					if ($this.opts.nextUrl !== "" || $this.opts.nextUrl === undefined) {
+					if ($this.opts.nextUrl !== "" && $this.opts.nextUrl !== undefined) {
+						// If the next url is already loaded, it will not be loaded when user continues scrolling
 						if (($this.opts.nextUrl in $this._blockUrls) == false) {
 							$this.get(before, success, error);
 							$this._blockUrls[$this.opts.nextUrl] = true;

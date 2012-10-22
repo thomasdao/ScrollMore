@@ -36,7 +36,8 @@ var success = function(data) {
     console.log(data);
     // Hide loading();
     
-    // Update next url. ScrollMore will load this nextUrl when user continues scrolling to bottom
+    // Update next url. ScrollMore will load this nextUrl when user continues scrolling to bottom.
+    // To stop, just set ScrollMore.opts.nextUrl = undefined;
     ScrollMore.opts.nextUrl = "/pages/3/";
 };
 var error = function() {
