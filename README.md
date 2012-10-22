@@ -46,3 +46,8 @@ var error = function() {
 };
 ScrollMore.init(before, success, error);
 ```
+
+If you want to check if user scroll near bottom, there is a simple function for that too
+```javascript
+ScrollMore.isNearBottom()
+```
