@@ -19,20 +19,29 @@ First, include the plugin:
 	<script src="/path/to/plugins/scrollmore/jquery.scrollmore.min.js"></script>
 
 Using ScrollMore is very simple
+
 ```javascript
-    // Setup ScrollMore
-    ScrollMore.opts.nextUrl = "/pages/2/";
-    var before = function(xhr) {
-        // Show loading here;
-    };
-    var success = function(data) {
-        // Hide loading();
-        
-        // Update next url. ScrollMore will load this nextUrl when user continues scrolling to bottom
-        ScrollMore.opts.nextUrl = "/pages/3/";
-    };
-    var error = function() {
-        // Show Error Message here
-    };
-    ScrollMore.init(before, success, error);
+// Setup ScrollMore
+ScrollMore.opts.nextUrl = "/pages/2/";
+// You can edit distance to bottom before load. Default value is 100px.
+ScrollMore.opts.distanceToBottom = 100;
+
+var before = function(xhr) {
+    // Show loading here;
+    console.log("Before Send");
+};
+
+// data is the content of the next url loaded
+var success = function(data) {
+    console.log(data);
+    // Hide loading();
+    
+    // Update next url. ScrollMore will load this nextUrl when user continues scrolling to bottom
+    ScrollMore.opts.nextUrl = "/pages/3/";
+};
+var error = function() {
+    // Show Error Message here
+    console.log("Error");
+};
+ScrollMore.init(before, success, error);
 ```
