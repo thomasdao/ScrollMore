@@ -4,6 +4,7 @@ ScrollMore
 ScrollMore is simple alternative for famous infinite scroll jquery plugin. The Infinite Scroll plugin in my view focuses too much on WordPress and getting more unnecessary features.
 
 ScrollMore only does most basic features:
+
 1) Check if user has scroll near bottom
 2) Load nextUrl using jQuery Ajax
 3) Notify caller via callback when success, error, and beforeSend event
