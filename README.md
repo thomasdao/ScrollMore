@@ -6,7 +6,9 @@ ScrollMore is simple alternative for famous infinite scroll jquery plugin. The I
 ScrollMore only does most basic features:
 
 1) Check if user has scroll near bottom
+
 2) Load nextUrl using jQuery Ajax
+
 3) Notify caller via callback when success, error, and beforeSend event
 
 How to use
@@ -17,9 +19,9 @@ First, include the plugin:
 	<script src="/path/to/plugins/scrollmore/jquery.scrollmore.min.js"></script>
 
 Using ScrollMore is very simple
-
+```javascript
     // Setup ScrollMore
-    ScrollMore.opts.nextUrl = $('a#next').attr('href');
+    ScrollMore.opts.nextUrl = "/pages/2/";
     var before = function(xhr) {
         // Show loading here;
     };
@@ -27,9 +29,10 @@ Using ScrollMore is very simple
         // Hide loading();
         
         // Update next url. ScrollMore will load this nextUrl when user continues scrolling to bottom
-        ScrollMore.opts.nextUrl = "/api/article/cursor/?curs=" + encodeURIComponent(data.cursor);
+        ScrollMore.opts.nextUrl = "/pages/3/";
     };
     var error = function() {
         // Show Error Message here
     };
     ScrollMore.init(before, success, error);
+```
