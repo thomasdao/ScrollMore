@@ -20,7 +20,7 @@
 
 			// Do AJAX GET for the nextUrl, with callback before, success and error
 			// Simply jQuery Ajax here
-			get : function(before, success, error) {
+			_get : function(before, success, error) {
 				var $this = this;
 				$.ajax({
 					type : "GET",
@@ -51,7 +51,7 @@
 							if ($this.opts.nextUrl !== "" && $this.opts.nextUrl !== undefined) {
 								// If the next url is already loaded, it will not be loaded when user continues scrolling
 								if (($this.opts.nextUrl in $this._blockUrls) == false) {
-									$this.get(before, success, error);
+									$this._get(before, success, error);
 									$this._blockUrls[$this.opts.nextUrl] = true;
 								}
 							}
